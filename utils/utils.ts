@@ -6,6 +6,8 @@ dotenv.config();
 export const retrieveEnvVariable = (variableName: string, logger: Logger) => {
   const variable = process.env[variableName] || '';
   if (!variable) {
+    console.log(dotenv);
+    
     logger.error(`${variableName} is not set`);
     process.exit(1);
   }
